@@ -11,7 +11,7 @@ import java.util.Scanner;
 
 public class SearchIt {
 
-    public static void main(String[] args) throws IOException {
+    public static void main(String[] args) throws IOException { 
         long startTime = System.currentTimeMillis();
     
         BinarySearchTree bst = new BinarySearchTree();
@@ -25,6 +25,6 @@ public class SearchIt {
         
         long endTime   = System.currentTimeMillis();
         long totalTime = endTime - startTime;
-        System.out.println("\nRun Time: "+totalTime+"ms");
+        System.out.println("\nRun Time: "+totalTime+"ms"); // Outputs runtime
     }
 }

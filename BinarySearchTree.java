@@ -11,7 +11,7 @@ public class BinarySearchTree {
 
     public BinaryTreeNode root;
 
-    public BinarySearchTree populate() throws IOException {
+    public BinarySearchTree populate() throws IOException { // Fills BST with nodes containing Person objects
         BinarySearchTree bst = new BinarySearchTree();
 
         try (BufferedReader br = new BufferedReader(new FileReader("testdata.txt"))) { 
@@ -36,7 +36,9 @@ public class BinarySearchTree {
         return bst;
     }
 
-    public void insert(Person per) {
+    public void insert(Person per) { 
+    // Adds node containing person to BST in the correct position
+    
         BinaryTreeNode node = new BinaryTreeNode(per);
         node.p = per;
         if (root == null) {
@@ -46,7 +48,8 @@ public class BinarySearchTree {
         insertRec(root, node);
     }
 
-    private void insertRec(BinaryTreeNode newNode, BinaryTreeNode exsistingNode) {
+    private void insertRec(BinaryTreeNode newNode, BinaryTreeNode exsistingNode) { 
+    // used by insert
 
         Person beingAdded = newNode.p;
         Person AddedTo = exsistingNode.p;
@@ -64,6 +67,7 @@ public class BinarySearchTree {
     }
 
     public void visit(BinaryTreeNode node) { 
+    // Outputs name value of the Person object contained in the node
 
         System.out.println(node.p.toString());
     }
@@ -72,7 +76,9 @@ public class BinarySearchTree {
         inOrder(root);
     }
 
-    public void inOrder(BinaryTreeNode node) {
+    public void inOrder(BinaryTreeNode node) { 
+    // Outputs BST inorder
+    
         if (node != null) {
             inOrder(node.getLeft());
             visit(node);
@@ -81,13 +87,15 @@ public class BinarySearchTree {
     }
 
     public void find(String s) {
+    // Searches for a search query (String) in the BST 
+    
         if (root == null) {
         } else {
             find(s, root);
         }
     }
 
-    public void find(String s, BinaryTreeNode node) {
+    public void find(String s, BinaryTreeNode node) { 
         boolean found = false;
         
         if (s.equals(node.p.name)) {

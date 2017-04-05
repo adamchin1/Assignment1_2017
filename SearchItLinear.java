@@ -18,7 +18,7 @@ public class SearchItLinear {
         ArrayList<Person> personArray = new ArrayList<>();
         System.out.println("Linear Search");
         System.out.println("Searching...\n");
-        while (data.hasNext()) {
+        while (data.hasNext()) { // Creates array of Person objects
                 String[] parts = data.nextLine().split("\\|");
                 Person p = new Person(null, null, null);
                 p.name = parts[2];
@@ -46,7 +46,7 @@ public class SearchItLinear {
         
         long endTime   = System.currentTimeMillis();
         long totalTime = endTime - startTime;
-        System.out.println("\nRun Time: "+totalTime+"ms");   
+        System.out.println("\nRun Time: "+totalTime+"ms"); // Outputs runtime
     }
         
 }
